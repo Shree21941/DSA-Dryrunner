@@ -1,0 +1,267 @@
+.test-results-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+.running {
+  padding: 3rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-box {
+  padding: 2rem;
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+}
+
+.error-box h3 {
+  color: #dc2626;
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+
+.error-box pre {
+  background: #fff7f7;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  color: #7f1d1d;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+}
+
+.results-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.results-header.passed {
+  background: linear-gradient(135deg, #f0fdf4, #f7fedd);
+  border-bottom: 2px solid #22c55e;
+}
+
+.results-header.failed {
+  background: linear-gradient(135deg, #fef2f2, #fef5f5);
+  border-bottom: 2px solid #ef4444;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.status-icon {
+  font-size: 1.5rem;
+}
+
+.status-text {
+  color: #1f2937;
+}
+
+.results-header.passed .status-text {
+  color: #15803d;
+}
+
+.results-header.failed .status-text {
+  color: #dc2626;
+}
+
+.summary {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.results-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.test-case {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem;
+}
+
+.test-case:last-child {
+  border-bottom: none;
+}
+
+.test-case.passed {
+  background: rgba(34, 197, 94, 0.02);
+  border-left: 3px solid #22c55e;
+  margin-left: -1rem;
+  padding-left: calc(1rem - 3px);
+}
+
+.test-case.failed {
+  background: rgba(239, 68, 68, 0.02);
+  border-left: 3px solid #ef4444;
+  margin-left: -1rem;
+  padding-left: calc(1rem - 3px);
+}
+
+.test-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.test-icon {
+  font-size: 1.2rem;
+}
+
+.test-case.passed .test-icon {
+  color: #22c55e;
+}
+
+.test-case.failed .test-icon {
+  color: #ef4444;
+}
+
+.test-name {
+  flex: 1;
+  color: #1f2937;
+}
+
+.test-status {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.test-status.pass {
+  background: rgba(34, 197, 94, 0.2);
+  color: #15803d;
+}
+
+.test-status.fail {
+  background: rgba(239, 68, 68, 0.2);
+  color: #991b1b;
+}
+
+.test-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.test-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.test-section.error {
+  background: #fef2f2;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 3px solid #ef4444;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.test-value {
+  background: #f8fafc;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin: 0;
+  font-size: 0.85rem;
+  font-family: 'Courier New', monospace;
+  color: #334155;
+  word-break: break-word;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+}
+
+.test-value.match {
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.test-value.no-match {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.test-section.error .test-value {
+  background: #fff7f7;
+  border-color: #fecaca;
+  color: #7f1d1d;
+}
+
+.results-footer {
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stat .number {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.stat.passed .number {
+  color: #22c55e;
+}
+
+.stat.failed .number {
+  color: #ef4444;
+}
+
+.stat .label {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
